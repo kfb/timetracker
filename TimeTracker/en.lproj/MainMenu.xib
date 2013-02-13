@@ -1537,6 +1537,7 @@
 							<string key="NSFrame">{{376, 13}, {90, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="811447580">
@@ -1635,7 +1636,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="247379115">
-				<int key="NSWindowStyleMask">19</int>
+				<int key="NSWindowStyleMask">8211</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{139, 535}, {377, 61}}</string>
 				<int key="NSWTFlags">-461896704</int>
@@ -1685,6 +1686,7 @@
 							<string key="NSFrame">{{290, 13}, {73, 32}}</string>
 							<reference key="NSSuperview" ref="724367743"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="648038498">
@@ -4281,14 +4283,24 @@
 					<string key="className">KFBAppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addEntry:">id</string>
 						<string key="exportData:">id</string>
+						<string key="hidePanel:">id</string>
 						<string key="saveAction:">id</string>
 						<string key="showMainWindow:">id</string>
 						<string key="showPanel:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addEntry:">
+							<string key="name">addEntry:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="exportData:">
 							<string key="name">exportData:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hidePanel:">
+							<string key="name">hidePanel:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="saveAction:">
