@@ -275,9 +275,34 @@
             
             NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingURL:[savePanel URL] error:&error];
             
+            KFBEntry *prevEntry = nil;
+            
+            NSTimeInterval diff;
+            
+            int hours   = 0;
+            int minutes = 0;
+            int seconds = 0;
+            
             for (KFBEntry *entry in fetchedObjects)
             {
-                NSString *string = [NSString stringWithFormat:@"%@: %@\n", entry.timestamp, entry.text];
+                if (prevEntry != nil)
+                {
+                    diff = [entry.timestamp timeIntervalSinceDate:prevEntry.timestamp];
+                    
+                    div_t h = div(diff, 3600);
+                    hours = h.quot;
+                    
+                    div_t m = div(h.rem, 60);
+                    minutes = m.quot;
+                    seconds = m.rem;
+                    
+//                    NSLog(@"since previous: %02d:%02d:%02d", hours, minutes, seconds);
+                }
+                
+                prevEntry = entry;
+                
+                NSString *string = [NSString stringWithFormat:@"%@: %@ (%02d:%02d:%02d)\n",
+                                    entry.timestamp, entry.text, hours, minutes, seconds];
                 NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
                 
                 [fileHandle seekToEndOfFile];
