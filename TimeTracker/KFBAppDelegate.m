@@ -217,11 +217,15 @@
 
 - (IBAction)showMainWindow:(id)sender
 {
+    [NSApp activateIgnoringOtherApps:YES];
+    
     [[self window] makeKeyAndOrderFront:nil];
 }
 
 - (IBAction)showPanel:(id)sender
 {
+    [NSApp activateIgnoringOtherApps:YES];
+    
     [[self entryPanel] makeKeyAndOrderFront:nil];
 }
 
